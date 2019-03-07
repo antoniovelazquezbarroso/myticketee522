@@ -80,8 +80,17 @@ test:
 #
 production:
   <<: *default
-  database: myticketee_pg_production
-  username: myticketee_pg
-  password: myticketee_pg
-  host: localhost
-  port: 5432
+  url: <%= Rails.application.credentials.database_url %>
+# database_url set in credentials.yml.enc
+# to "postgresql://antonio:Antonio1@localhost:5432/myticketee_pg_production"
+# to make it run on my MacDesktop
+   
+# OLDER VERSION
+#  database: myticketee_pg_production
+#  # ON MyMac BY DEFAULT DATABASE username AND password WILL BE SET TO MY SYSTEM USER (antonio)
+#  # SO YOU DONT NEED TO SET ANOTHER username OR password FOR POSTGRE(typical use-case for development)
+#  # username: myticketee_pg
+#  # password: myticketee_pg
+#  # host: localhost
+#  # port: 5432
+

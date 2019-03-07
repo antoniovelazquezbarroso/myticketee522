@@ -16,4 +16,14 @@
 !/log/.keep
 /tmp
 
-/.c9/*
+# Avoid soiling the git repo when running on Mac
+.DS_Store
+/**/.DS_Store
+/**/**/.DS_Store
+
+# Avoid soiling the repo when running on production environment
+/public/assets/*
+/vendor/bundle/*
+
+# Ignore master key for decrypting credentials and more.
+/config/master.key
