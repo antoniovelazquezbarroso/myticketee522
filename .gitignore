@@ -27,3 +27,15 @@
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+
+# These files need amendment to run in production environment
+# I copied the old development versions to 'old_name.sample', as reference
+# (except for puma.rb, tmp/pids and tmp/sockets, which did not exist before)
+# And prevented git from detecting future changes with "git rm -r --cached 'old_name'"
+Gemfile
+Gemfile.lock
+/config/database.yml
+/config/puma.rb.                   
+/config/environments/production.rb
+/tmp/pids/*
+/tmp/sockets/*
