@@ -80,8 +80,8 @@ test:
 #
 production:
   <<: *default
-  database: myticketee_pg_production
-  username: myticketee_pg
-  password: myticketee_pg
-  host: localhost
+  database: <%= Rails.application.credentials.db_database_name %>
+  username: <%= Rails.application.credentials.db_username %>
+  password: <%= Rails.application.credentials.db_password %>
+  host: "{{ groups['db'][0] }}"
   port: 5432
